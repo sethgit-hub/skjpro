@@ -1,66 +1,148 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+import React from "react"
+
+// EFFECTS
+import FinanceFloat from "@/components/FinanceFloat"
+import ClickSparkle from "@/components/ClickSparkle"
+
+// HEADER
+import Header from "@/components/Header"
+
+// HERO
+import HeroFutureHire from "@/components/HeroFutureHire"
+
+// SECTIONS
+import ToolsTicker from "@/components/ToolsTicker"
+import QuadGridLens from "@/components/Skills"
+import ActiveTimeline from "@/components/ActiveTimeline"
+import ProjectCard from "@/components/ProjectCard"
+import CredentialInspector from "@/components/CredentialInspector"
+
+// UI / FX
+import LiquidGlass from "@/components/LiquidGlass"
+import ParallaxImage from "@/components/ParallaxImage"
+
+// FOOTER DATA (NEW)
+import FooterData from "@/components/FooterData"
+
+export default function Page() {
+    return (
+        <div
+            style={{
+                background: "#050505",
+                color: "#ffffff",
+                minHeight: "100vh",
+                fontFamily: "'Inter', sans-serif",
+                overflowX: "hidden",
+                position: "relative",
+            }}
+        >
+            {/* CLICK / TAP SPARKLE */}
+            <ClickSparkle theme="dark" />
+
+            {/* BACKGROUND FLOAT (GLOBAL) */}
+            <FinanceFloat />
+
+            {/* FIXED HEADER */}
+            <Header theme="dark" />
+
+            {/* PAGE CONTENT */}
+            <main style={{ paddingTop: "64px", position: "relative", zIndex: 2 }}>
+                {/* HERO */}
+                <HeroFutureHire />
+
+                {/* TOOLS */}
+                <ToolsTicker />
+
+                {/* SKILLS */}
+                <section id="about" style={{ padding: "80px 0" }}>
+                    <SectionHeader title="SKILLS" />
+                    <QuadGridLens />
+                </section>
+
+                {/* EXPERIENCE */}
+                <section style={{ padding: "80px 0" }}>
+                    <SectionHeader title="PROFESSIONAL TIMELINE" />
+                    <ActiveTimeline />
+                </section>
+
+                {/* PROJECTS */}
+                <section id="projects" style={{ padding: "80px 20px" }}>
+                    <SectionHeader title="SELECTED WORK" />
+                    <ProjectCard />
+                    <ProjectCard alignRight />
+                </section>
+
+                {/* EDUCATION */}
+                <section id="education" style={{ padding: "80px 0" }}>
+                    <SectionHeader title="CREDENTIALS" />
+                    <CredentialInspector />
+                </section>
+
+                {/* CONTACT / CTA */}
+                <section
+                    id="contact"
+                    style={{
+                        padding: "120px 20px",
+                        display: "flex",
+                        justifyContent: "center",
+                    }}
+                >
+                    <LiquidGlass width="800px">
+                        <h2 style={{ fontSize: "32px", marginBottom: "16px" }}>
+                            Let’s Build Something Impactful
+                        </h2>
+                        <p style={{ color: "#ccc", marginBottom: "24px" }}>
+                            Finance, strategy, and execution — ready when you are.
+                        </p>
+                        <button
+                            style={{
+                                padding: "14px 32px",
+                                borderRadius: "100px",
+                                border: "none",
+                                background: "#4ade80",
+                                color: "#000",
+                                fontWeight: "bold",
+                                cursor: "pointer",
+                            }}
+                        >
+                            CONTACT ME
+                        </button>
+                    </LiquidGlass>
+                </section>
+
+                {/* FINAL FOOTER — INTELLIGENT TERMINAL */}
+                <FooterData theme="dark" />
+            </main>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    )
 }
+
+/* --------------------------------------- */
+
+function SectionHeader({ title }) {
+    return (
+        <div style={{ textAlign: "center", marginBottom: "50px" }}>
+            <p
+                style={{
+                    fontSize: "12px",
+                    letterSpacing: "3px",
+                    color: "#666",
+                    marginBottom: "10px",
+                }}
+            >
+                {title}
+            </p>
+            <div
+                style={{
+                    width: "60px",
+                    height: "3px",
+                    background: "#4ade80",
+                    margin: "0 auto",
+                }}
+            />
+        </div>
+    )
+}
+    
