@@ -15,7 +15,6 @@ import HeroFutureHire from "@/components/HeroFutureHire"
 import ToolsTicker from "@/components/ToolsTicker"
 import QuadGridLens from "@/components/Skills"
 import ActiveTimeline from "@/components/ActiveTimeline"
-import ProjectCard from "@/components/ProjectCard"
 import CredentialInspector from "@/components/CredentialInspector"
 
 // UI / FX
@@ -62,13 +61,6 @@ export default function Page() {
                 <section style={{ padding: "80px 0" }}>
                     <SectionHeader title="PROFESSIONAL TIMELINE" />
                     <ActiveTimeline />
-                </section>
-
-                {/* PROJECTS */}
-                <section id="projects" style={{ padding: "80px 20px" }}>
-                    <SectionHeader title="SELECTED WORK" />
-                    <ProjectCard />
-                    <ProjectCard alignRight />
                 </section>
 
                 {/* EDUCATION */}
