@@ -142,7 +142,7 @@ export default function HeroFutureHire() {
     return (
         <section style={container}>
             <div style={content}>
-                <h1 style={name}>YOUR NAME</h1>
+                <h1 style={name}>SETHU KUMAR J</h1>
 
                 <div style={badge}>
                     <span style={dot} />

@@ -1,34 +1,36 @@
 "use client"
-import React, { useState, useRef } from "react"
+
+import React, { useState } from "react"
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion"
 
 // ==============================================
-// 💼 YOUR EXPERIENCE DATA (With Logos)
+// 💼 YOUR EXPERIENCE DATA
 // ==============================================
 const jobs = [
     {
-        title: "Senior Financial Analyst",
-        company: "Goldman Sachs",
-        period: "2021 - Present",
-        logo: "https://cdn.simpleicons.org/goldmansachs", // Replace with actual logo URL
-        description:
-            "Led valuation models for tech IPOs. Automated reporting workflows using Python, reducing manual hours by 40%.",
-    },
-    {
-        title: "Junior Accountant",
-        company: "Deloitte",
-        period: "2019 - 2021",
-        logo: "https://cdn.simpleicons.org/deloitte",
-        description:
-            "Managed accounts payable for high-net-worth clients. Conducted monthly bank reconciliations and GAAP compliance checks.",
-    },
-    {
-        title: "Finance Intern",
-        company: "JPMorgan Chase",
-        period: "2018 - 2019",
-        logo: "https://cdn.simpleicons.org/chase",
-        description:
-            "Assisted in risk analysis reports. Visualized quarterly performance data using Power BI dashboards.",
+        title: "FINANCE INTERN",
+        company: "MOJO Company",
+        period: "June'2025 - Present",
+        // Replace with actual logo URLs
+        logo: "https://play-lh.googleusercontent.com/9YuvZFj6a7qgxex5P3zL8foju_RcZg1tIMbM4k-jr337JzAXIBUuFhzApR8tz5iY3wiK=w240-h480-rw",
+        description: [
+            "Processed & recorded student fee receipts, vendor invoices, & service-charge bills. Handled payment amounts totalling over ₹350 million.",
+
+            "Tracked & classified expenses by assigning transactions to the right categories, such as utilities, maintenance, & insurance. This supported trial balances & monthly financial statements.",
+
+            "Prepared & reconciled Bank Reconciliation Statements. Investigated discrepancies & adjusted unearned revenue & suspense accounts.",
+
+            "Compiled historical occupancy & revenue data to support budget analysis, cash flow forecasting, & variance reporting against planned figures.",
+,
+            "Kept financial documentation organized and helped prepare for audits., which included trial balances, reconciliations, payment vouchers, and an audit tracker for statutory & internal audits.",
+
+            "Worked with Operations teams to improve workflows and ensure smooth coordination between finance & administrative functions.",
+
+            "Provided support to clients with hostel accommodation inquiries while clarifying financial obligations & helping coordinate payments.",
+
+            "Used MS Excel, Google Sheets, and Zoho Books for bookkeeping, financial tracking, & data analysis.",
+
+        ],
     },
 ]
 
@@ -145,7 +147,7 @@ function TimelineNode({ job }) {
                         <span style={dateBadge}>{job.period}</span>
                     </div>
 
-                    {/* The "Accordion" Reveal */}
+                    {/* The "Accordion" Reveal with BULLET POINTS */}
                     <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{
@@ -154,7 +156,14 @@ function TimelineNode({ job }) {
                         }}
                         style={{ overflow: "hidden" }}
                     >
-                        <p style={descStyle}>{job.description}</p>
+                        <ul style={listContainer}>
+                            {job.description.map((point, index) => (
+                                <li key={index} style={listItem}>
+                                    <span style={bulletPoint}>▹</span>
+                                    <span>{point}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </motion.div>
                 </div>
             </div>
@@ -162,7 +171,9 @@ function TimelineNode({ job }) {
     )
 }
 
-// --- STYLES ---
+// ==============================================
+// 🎨 STYLES
+// ==============================================
 
 const containerStyle = {
     position: "relative",
@@ -196,7 +207,7 @@ const dotTrack = {
     width: "40px",
     display: "flex",
     justifyContent: "center",
-    paddingTop: "30px", // Adjusted to align with the taller logo header
+    paddingTop: "30px",
     marginRight: "25px",
 }
 
@@ -250,23 +261,22 @@ const cardContent = {
 const headerRow = {
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center", // Vertically Center everything
+    alignItems: "center",
     width: "100%",
-    flexWrap: "wrap", // Allow wrapping on tiny phones
+    flexWrap: "wrap",
     gap: "10px",
 }
 
-// NEW LOGO STYLES
 const logoBox = {
     width: "48px",
     height: "48px",
-    background: "#fff", // White background ensures logo visibility
-    borderRadius: "10px", // Rounded square
+    background: "#fff",
+    borderRadius: "10px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    padding: "8px", // Breathing room for the logo
-    flexShrink: 0, // Prevent logo from squishing
+    padding: "8px",
+    flexShrink: 0,
 }
 
 const imgStyle = {
@@ -300,11 +310,31 @@ const dateBadge = {
     whiteSpace: "nowrap",
 }
 
-const descStyle = {
+/* LIST STYLES */
+const listContainer = {
     marginTop: "15px",
+    paddingTop: "15px",
+    borderTop: "1px solid rgba(255,255,255,0.1)",
+    paddingLeft: "0",
+    margin: "15px 0 0 0",
+    listStyle: "none",
+    display: "flex",
+    flexDirection: "column",
+    gap: "8px",
+}
+
+const listItem = {
     color: "#ccc",
     fontSize: "14px",
     lineHeight: "1.6",
-    paddingTop: "15px",
-    borderTop: "1px solid rgba(255,255,255,0.1)",
+    display: "flex",
+    alignItems: "flex-start",
+    gap: "10px",
+}
+
+const bulletPoint = {
+    color: "#4ad4deff",
+    fontSize: "16px",
+    lineHeight: "1.2",
+    flexShrink: 0,
 }

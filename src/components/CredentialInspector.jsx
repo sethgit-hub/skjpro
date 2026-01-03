@@ -8,48 +8,39 @@ import { motion, AnimatePresence } from "framer-motion"
 const credentials = [
     {
         id: "EDU-01",
-        title: "Master of Business Admin",
-        org: "Symbiosis Institute",
-        year: "2021 - 2023",
+        title: "Master of Business Administration",
+        org: "JAIN (Deemed-to-be University)",
+        year: "Accredited | 2022 - 2024",
         cat: "DEGREE",
         color: "#a78bfa", // Purple
-        desc: "Specialized in Financial Strategy & Risk Management. Graduated with Distinction.",
+        desc: "Specialized in FINANCE",
+    },
+    {
+        id: "EDU-02",
+        title: "Bachelors of Commerce",
+        org: "Bengaluru City University",
+        year: "Accredited | 2019 - 2021",
+        cat: "DEGREE",
+        color: "#8bd7faff", // Blue
+        desc: "Specialized in Accounting & Taxation"
+    },
+    {
+        id: "EDU-03",
+        title: "Pre - University College",
+        org: "Kairalee Nikethan Independent PU College",
+        year: "Accredited | 2017 - 2018",
+        cat: "DEGREE",
+        color: "#dcfa8bff", // Yellow
+        desc: "Specialized in Commerce",
     },
     {
         id: "CERT-01",
-        title: "CFA Level 1 Candidate",
-        org: "CFA Institute",
-        year: "In Progress",
-        cat: "LICENSE",
-        color: "#facc15", // Yellow
-        desc: "Preparing for the rigorous Level 1 exam. Focus on Ethics, Quant, and Portfolio Mgmt.",
-    },
-    {
-        id: "CERT-02",
-        title: "Google Data Analytics",
-        org: "Google Career Certs",
-        year: "2023",
-        cat: "CERTIFICATE",
-        color: "#4ade80", // Green
-        desc: "Professional certificate covering R, SQL, Tableau, and Data Cleaning methodologies.",
-    },
-    {
-        id: "CERT-03",
-        title: "Microsoft Excel Expert",
-        org: "MO-200 Exam",
-        year: "2022",
+        title: "Data Analysis",
+        org: "G.K.Computers",
+        year: "Certified | 2025",
         cat: "SKILL",
-        color: "#4ade80",
-        desc: "Certified expert in advanced formulas, VBA automation, and complex data modeling.",
-    },
-    {
-        id: "CERT-04",
-        title: "Microsoft Excel Expert",
-        org: "MO-300 Exam",
-        year: "2023",
-        cat: "SKILL",
-        color: "#4ade80",
-        desc: "Certified expert in advanced formulas, VBA automation, and complex data modeling.",
+        color: "#4ade99ff",
+        desc: "Certified in Advance Excel | Power BI | Tally Prime GST | SQL | Phyton | C++",
     },
 ]
 
@@ -127,7 +118,7 @@ export default function CredentialInspector() {
                                 <span
                                     style={{ color: "#888", fontSize: "12px" }}
                                 >
-                                    STATUS / YEAR
+                                    STATUS | YEAR
                                 </span>
                                 <span
                                     style={{

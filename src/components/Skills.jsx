@@ -31,11 +31,11 @@ const DATA = [
         title: "Technical Stack",
         color: COLORS.tech,
         items: [
-            { name: "Accounting", icon: "📒", tag: "Expert" },
-            { name: "Financial Analysis", icon: "📊", tag: "Expert" },
-            { name: "Bank Reconciliation", icon: "🏦", tag: "Proficient" },
+            { name: "Accounting", icon: "📒", tag: "Intermediate" },
+            { name: "Financial Analysis", icon: "📊", tag: "Intermediate" },
+            { name: "Bank Reconciliation", icon: "🏦", tag: "Intermediate" },
             { name: "US GAAP", icon: "⚖️", tag: "Intermediate" },
-            { name: "SAP / Oracle", icon: "💻", tag: "Tooling" },
+            { name: "Accounts P&R", icon: "💻", tag: "Intermediate" },
         ],
     },
     {

@@ -10,7 +10,6 @@ import CustomEyes from "@/components/CustomEyes"
 
 const SECTIONS = [
     { label: "About", id: "about" },
-    { label: "Projects", id: "projects" },
     { label: "Education", id: "education" },
     { label: "Contact", id: "contact" },
 ]
@@ -54,19 +53,17 @@ export default function Header({ theme = "dark" }) {
                     : "1px solid rgba(0,0,0,0.08)",
             }}
         >
-            {/* LEFT — HOME (Glass Pill) */}
+            {/* LEFT — HOME */}
             <GlassPill
                 label="HOME"
-                active={false}
                 onClick={() =>
                     window.scrollTo({ top: 0, behavior: "smooth" })
                 }
                 theme={theme}
             />
 
-            {/* RIGHT — NAV + EYES */}
+            {/* RIGHT — NAV + RESUME + EYES */}
             <div style={rightGroup}>
-                {/* NAV ITEMS */}
                 <nav style={nav}>
                     {SECTIONS.map(({ label, id }) => (
                         <GlassPill
@@ -81,9 +78,21 @@ export default function Header({ theme = "dark" }) {
                             theme={theme}
                         />
                     ))}
+
+                    {/* RESUME DOWNLOAD */}
+                    <GlassPill
+                        label="RESUME"
+                        onClick={() => {
+                            const link = document.createElement("a")
+                            link.href = "https://drive.google.com/file/d/1j2OPf81GDANxFniXNG5wN__WKMcnmTZD/view?usp=drive_link" // put file in /public
+                            link.download = "SETHU J_CV.pdf"
+                            link.click()
+                        }}
+                        theme={theme}
+                    />
                 </nav>
 
-                {/* EYES (NO GLASS) */}
+                {/* EYES */}
                 <div style={eyesWrapper}>
                     <CustomEyes theme={theme} />
                 </div>
@@ -93,7 +102,7 @@ export default function Header({ theme = "dark" }) {
 }
 
 /* =========================
-   GLASS PILL COMPONENT
+   GLASS PILL
 ========================= */
 
 function GlassPill({ label, onClick, active, theme }) {
@@ -145,7 +154,6 @@ const headerBase = {
     zIndex: 1000,
 }
 
-/* Right side */
 const rightGroup = {
     display: "flex",
     alignItems: "center",
@@ -158,7 +166,6 @@ const nav = {
     gap: "12px",
 }
 
-/* Glass pill */
 const pillBase = {
     fontFamily: "monospace",
     fontSize: "12px",
@@ -173,7 +180,6 @@ const pillBase = {
     backgroundClip: "padding-box",
 }
 
-/* Eyes */
 const eyesWrapper = {
     display: "flex",
     alignItems: "center",
