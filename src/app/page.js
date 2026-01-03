@@ -4,7 +4,6 @@ import React from "react"
 
 // EFFECTS
 import FinanceFloat from "@/components/FinanceFloat"
-import ClickSparkle from "@/components/ClickSparkle"
 
 // HEADER
 import Header from "@/components/Header"
@@ -38,8 +37,6 @@ export default function Page() {
                 position: "relative",
             }}
         >
-            {/* CLICK / TAP SPARKLE */}
-            <ClickSparkle theme="dark" />
 
             {/* BACKGROUND FLOAT (GLOBAL) */}
             <FinanceFloat />
